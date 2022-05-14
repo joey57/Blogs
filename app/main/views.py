@@ -15,6 +15,11 @@ def index():
     title = 'Welcome to My Blog'
     return render_template('index.html',title = title, blogQuote=blogQuote)
 
+@main.route('/home')
+@login_required
+def home():
+    return render_template("home.html" )
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()

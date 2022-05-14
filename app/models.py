@@ -19,9 +19,6 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
-    posts = db.relationship('Post', backref='user', passive_deletes=True)
-    comments = db.relationship('Comment', backref ='user', passive_deletes=True)
-    likes = db.relationship('Like', backref ='user', passive_deletes=True)
     
     @property
     def password(self):
