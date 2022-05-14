@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, abort,flash
 from ..requests import get_blogQuotes
 from . import main
-from ..models import User,Post,Comment,Like
+from ..models import User
 from flask_login import login_required, current_user
 from datetime import datetime
 from .. import db
